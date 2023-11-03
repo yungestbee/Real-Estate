@@ -1,0 +1,168 @@
+*{
+    padding:0;
+    margin:0;
+    overflow-x: hidden;
+}
+
+.container {
+    /* padding: 2rem; */
+    background-image: url("../images/thirdBg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100vw;
+    height:100vh;
+}
+
+.container1 {
+    background-image: linear-gradient(to right bottom, rgba(0, 162, 255, 0.5), #77777788), url("../images/SOLANLOGO1.jpg") ;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width:100vw;
+    height:100vh;
+}
+
+.head{
+    /* border: 1px solid black; */
+    background-color: #434647;
+    width:100vw;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.headFlex{
+    display:flex;
+}
+
+.headLogo{
+    width: 8%;
+    /* border: 1px solid black; */
+    margin-left: 2%;    
+    /* position: relative; */
+}
+
+.signUpHeader {
+    /* margin: auto; */
+    font-size: 1.2rem;
+    margin-left: 37%;
+    position: relative;
+    color: #fff;
+    /* outline: 1px solid; */
+
+}
+
+.signUpHeader1 {
+    /* margin: auto; */
+    font-size: 1.2rem;
+    margin-left: 20%;
+    position: relative;
+    /* outline: 1px solid; */
+    color: #fff
+
+}
+
+.signUpFlex {
+    background: rgb(67, 70, 71, 0.9) ;
+    /* outline: 1px solid; */
+    position: relative;
+    width: 35%;
+    margin: auto;
+    border-radius: 3px;
+    padding-bottom: 1rem;
+}
+
+.signUpImage {
+    width: 50%;
+}
+
+.signUpImage img {
+    width: 100%;
+}
+
+.signUpDetails {
+    width: 90%;
+    margin-left: 5%;
+    /* border: 1px solid; */
+}
+
+/* .signUpDetails p {
+    width: 70%;
+    margin-left: 5%
+} */
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    /* margin-bottom: 2rem; */
+    margin-top: 0.5rem;
+    /* border: 1px solid; */
+}
+
+.inputBox {
+    width: 100%;
+    height: 1rem;
+    /* border-radius:5px; */
+    border:none
+}
+
+.signUpButton {
+    margin-top: 1rem;
+    /* border-radius: 15px; */
+    width: 100%;
+    height: 1rem;
+    border: none;
+    cursor: pointer;
+    background-color: #00a2ff;
+}
+
+a {
+    text-decoration: none;
+}
+
+label{
+    font-size:0.7rem;
+    color: #fff;
+}
+
+.lastPara{
+    font-size: 0.6rem;
+    /* border: 1px solid; */
+    width:100%;
+    margin: 1rem;
+}
+.forPass{
+    font-size: 0.6rem;
+    cursor: pointer;
+}
+
+.for{
+    padding: 0rem 1rem;
+}
+
+.resetBtn{
+    margin-top:0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    background-color: #00a2ff;
+    border:none;
+    font-size: 0.7rem;
+    width: 4rem;
+    height: 1rem;
+}
+
+#user::placeholder{
+    padding-left: 0.3rem;
+    font-size: 0.7rem;
+}
+
+.inputPara{
+    font-size: 0.8rem;
+}
+
+.finalPara{
+    font-size: 0.8rem;
+}
+
+.errorPara{
+    font-size: 0.7rem;
+    color:#ff4800;
+}
