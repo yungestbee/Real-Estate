@@ -4,15 +4,23 @@ const mongoose = require('mongoose')
 const route = require('./routes/routes')
 const cors = require('cors')
 const cookie = require('cookie-parser')
+const bodyParser = require('body-parser')
+const path = require('path')
+const fileUpload = require('express-fileupload');
 
 
 
 const app = express()
 
+app.use(bodyParser.urlencoded({ extended: false })); // For parsing application/x-www-form-urlencoded
+app.use(bodyParser.json())
 app.use(express.json())
 app.use(cookie())
+app.use(fileUpload());
 
 app.use(cors())
+app.use('/uploads', express.static('uploads'))
+// app.use('/propertyImages', express.static(path.join(__dirname, 'propertyImages')))
 
 app.use(route)
 

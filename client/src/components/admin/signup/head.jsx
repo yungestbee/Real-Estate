@@ -7,6 +7,7 @@ function Head() {
              <div className="head">
                 <div className="headFlex">
                     <img src={image} className="headLogo" />
+                    <div className="headBorder"></div>
                 </div>
             </div>
         </> 

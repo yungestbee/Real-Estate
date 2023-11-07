@@ -19,9 +19,9 @@ const user = require("../models/userSchema");
                 const isValidPassword = await bcrypt.compare(value.password, currentUser.password)
                 if(!isValidPassword) {
                     console.log("currentUser")
-                    return res.status(http.StatusCodes.NOT_ACCEPTABLE).json({ error: 'Credentials invalid'})
+                    return res.status(http.StatusCodes.NOT_ACCEPTABLE).json({ error: 'Invalid Credentials'})
                 } else {
-                    const token = await jwt.sign({username: value.username, authentication: currentUser.authentication}, secretKey)
+                    const token = await jwt.sign({username: value.username}, secretKey)
                     if(!token) {
                         console.log("invalid token")
                         return res.status(http.StatusCodes.UNAUTHORIZED).json({error: "invalid token"})
@@ -37,7 +37,7 @@ const user = require("../models/userSchema");
                             reply: `Welcome back ${currentUser.username}`
                           }
                           // req.user = token
-                          console.log(result)
+                          console.log(  )
                           return res.status(http.StatusCodes.OK).json(result);
                     }
                 }

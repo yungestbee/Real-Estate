@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import Head from "../signup/head";
 
@@ -7,6 +9,9 @@ function ResetPassword(){
     const [newPassword, setNewPassword] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
+    const [type, setType] = useState('password');
+    const [icon, setIcon] = useState(faEyeSlash);
+    const navigate = useNavigate()
 
 
     const getNewPassword =(e)=>{
@@ -15,6 +20,16 @@ function ResetPassword(){
     const getPassword =(e)=>{
         setPassword(e.target.value)
     }
+
+    const handleToggle = () => {
+        if (type==='password'){
+           setIcon(faEye);
+           setType('text')
+        } else {
+           setIcon(faEyeSlash)
+           setType('password')
+        }
+     }
     
     const handleSubmit =(e)=>{
         e.preventDefault()
@@ -29,6 +44,7 @@ function ResetPassword(){
             console.log(res)
             if(res.status == 200){
                 alert(res.data.message)
+                navigate("/login")
             } else {
                 setError(res.data.message)
             }            // navigate('/employees')
@@ -43,21 +59,27 @@ function ResetPassword(){
     
     return(
         <>
-            <div className="container">
+            <div className="fcontainer">
                 <Head />
                 <div className="signUpFlex">
                     <div className="signUpDetails">
                         <h2 className="signUpHeader1">Change Password</h2>
                         <form onSubmit={handleSubmit}>
                            
-                           <div className="inputContainer">
-                                <label for="pass">Enter New Password</label>
-                                <input id="pass" className="inputBox" type="password" onChange={getPassword}/>
+                        <div className="inputContainer">
+                                <label for="pass">Password</label>
+                                <div className="passInp">
+                                <input id="pass" className="inputBox" type={type} onChange={getPassword} />
+                                <FontAwesomeIcon icon={icon} className="eye" onClick={handleToggle}/>
+                                </div>
                             </div>
 
                             <div className="inputContainer">
-                                <label for="pass">Confirm New Password</label>
-                                <input id="pass" className="inputBox" type="password" onChange={getNewPassword}/>
+                                <label for="pass">Password</label>
+                                <div className="passInp">
+                                <input id="pass" className="inputBox" type={type} onChange={getNewPassword} />
+                                <FontAwesomeIcon icon={icon} className="eye" onClick={handleToggle}/>
+                                </div>
                             </div>
                             {error && <p className="errorPara">{error}</p>}
 

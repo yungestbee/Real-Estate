@@ -43,12 +43,11 @@ const register = async (req, res, next)=>{
 
         }else{
             console.log(error.message)
-            return res.status(http.StatusCodes.BAD_REQUEST).json(error.message)
+            return res.status(http.StatusCodes.BAD_REQUEST).json({ message: error.message })
         }
 
     }
 }
-
 
 
 module.exports = register

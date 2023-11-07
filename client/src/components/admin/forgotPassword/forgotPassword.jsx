@@ -38,7 +38,7 @@ function ForgotPassword(){
         }
 
     return (
-        <div className="container1">
+        <div className="fcontainer1">
             <Head />
         <form onSubmit={handleSubmit} className="for">
             <div className="inputContainer">
@@ -48,7 +48,7 @@ function ForgotPassword(){
                 
             {error && <p className="errorPara">{error}</p>}
             <button className="resetBtn">Send Mail</button>
-            <p className="finalPara">Go back to <Link to="/login">Login page</Link> </p>
+            <p className="finalPara">Go back to <Link to="/login" style={{textDecoration: "none", color: "#00a2ff"}}>Login page</Link> </p>
         </form>
         </div>
     )
