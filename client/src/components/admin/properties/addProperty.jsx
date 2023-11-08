@@ -92,7 +92,7 @@ function AddProperty() {
         }
   return (
     <>
-      <div className='container1'>
+      <div className='fcontainer1'>
         <Head />
       <div className="add-room-container">
       <h1 className='addPropertyH2'>Add New Property</h1>

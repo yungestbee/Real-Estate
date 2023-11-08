@@ -6,6 +6,7 @@ const addProperty = async (req, res) => {
     const value = req.body;
     const myBucket = process.env.aws_bucket_name;
     console.log(req.files.file)
+    console.log(process.env.aws_access_key, process.env.aws_secret)
 
     AWS.config.update({
         accessKeyId: process.env.aws_access_key,
@@ -23,7 +24,7 @@ const addProperty = async (req, res) => {
     const currentTime = new Date().getTime()
     const params = {
         Bucket: myBucket,
-        Key: `property_${currentTime}`,
+        Key: `site/property_${currentTime}`,
         Body: fileContent,
     };
 

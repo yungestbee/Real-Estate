@@ -1,0 +1,22 @@
+.dropDownContainer{
+    width:10%;
+    height:4rem;
+    border:2px solid;
+}
+
+.dropDownToggle{
+    height: 2rem;
+}
+
+
+.dropDownMenu{
+    width:2rem;
+    height: 1rem;
+
+}
+
+.dropDownItem{
+    font-size: 0.4rem;
+    padding: 0;
+    margin: 0;
+}

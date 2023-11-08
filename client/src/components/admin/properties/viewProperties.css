@@ -33,38 +33,33 @@
   
   }
   
-  .reservation {
-    font-size: 30px;
-    margin-bottom: 20px;
-    color: #434647;
-    margin-left: 30rem;
-  }
-  
   .fftabularForm {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid #ccc;
+    margin-top:0px;
   }
 
   .fftabular-head{
     display: flex;
     text-align: center;
+    margin-top:0px;
     /* width: 100%; */
   }
   
   .fftabular-head th {
     background-color: #434647;
     color: #fff;
-    font-size: 55%;
+    font-size: 30%;
     font-weight: bold;
-    width: 10%;
+    width: 10vw;
    }
    #sn{
     width:5%
    }
 
    #emp{
-    width:5%
+    width:4%
    }
 
    .icons{
@@ -86,7 +81,7 @@
     padding: 13px 6px;
     text-align: center;
     border: 1px solid #ccc;
-    width: 10%;
+    width: 10vw;
   
   }
   
@@ -121,7 +116,7 @@
 
   tbody tr td{
     /* width: 9.5%; */
-    font-size: 50%;
+    font-size: 40%;
   }
   
   .pagination {
@@ -243,40 +238,172 @@
       display: flex;
       flex-direction: column;
       padding: 12px 6px;
-      font-size: 20px;
+      font-size: 0.3rem;
+      /* width: 7vw */
     }
   
-    .reservation {
+    /* .reservation {
       font-size: 30px;
-    }
+    } */
   }
   
   @media screen and (max-width: 768px) {
-  
+
+    .checkbox-group1 {
+      /* border:1px solid; */
+      display: flex;
+      /* flex-wrap: wrap; */
+      gap: 0px;
+      width: 55vw;
+      justify-content: space-between;
+    }
+    
+    #effect1{
+      font-size: 0.25rem;
+      display: flex;
+      align-items: center;
+      /* outline: 1px solid; */
+      margin: 0;
+      width: 40%;
+      padding: 0;
+    
+    
+    }
+    #checkbox1 {
+      margin-right: 3px;
+      /* width: 20rem; */
+      /* border: 1px solid; */
+    }
     th,
     td {
       display: flex;
       flex-direction: column;
       padding: 10px 6px;
-      font-size: 14px;
+      font-size: 0.3rem;
+      /* width: 7vw */
+    }
+
+    .modalContainer{
+      width: 60%;
+      margin-left: 20%;
     }
   
-    .reservation {
+    /* .reservation {
       font-size: 20px;
     }
-  
+   */
   
   }
   
   @media screen and (max-width: 480px) {
+
+  
+  .addPropertyBtn {
+    width: 15vw;
+    /* height: 2rem; */
+    background-color: #434647;
+    border: none;
+    font-size: 40%;
+    /* border-radius: 10px; */
+    color: #fff;
+    padding: 10px;
+    /* bottom: auto; */
+    /* position: absolute; */
+    /* top: 95%; */
+    /* margin-left: 45%; */
+    margin: 2rem auto;
+    text-align: center;
+    /* margin-bottom: 2rem; */
+  
+  }
+    
+  .fftabular-head th {
+    background-color: #434647;
+    color: #fff;
+    font-size: 30%;
+    font-weight: bold;
+    width: 9.5vw;
+   }
   
     th,
     td {
       padding: 8px 4px;
-      font-size: 12px;
+      font-size: 0.3rem;
+      width: 9.5vw
+    }
+
+    .icons{
+      flex-direction: column;
+      align-content:space-between;
+      /* border: 1px solid; */
+      height: 1.5rem;
+    }
+
+    #sn{
+      width:5.2%
+     }
+  
+     #emp{
+      width:5.2%
+     }
+
+
+     .modalContainer{
+      width: 90%;
+      margin-left: 5%;
     }
   
-    .reservation {
-      font-size: 18px;
+    .modalHeader{
+      height:5%;
+      background-color:#434647;
+      color: #fff;
     }
+    .modalTitle{
+      font-size: 0.5rem
+    }
+  
+  
+    .modalBtn {
+      background-color: #434647;
+      color: #fff;
+      border: none;
+      width: 20vw;
+      /* border-radius: 10px; */
+      padding: 5px 10px;
+      cursor: pointer;
+      justify-self: center;
+      font-size: 0.4rem;
+      /* margin: 0.3rem auto; */
+  }
+
+
+  .checkbox-group1 {
+    /* border:1px solid; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 0px;
+    width: 55vw;
+    justify-content: space-between;
+  }
+  
+  #effect1{
+    font-size: 0.25rem;
+    display: flex;
+    align-items: center;
+    /* outline: 1px solid; */
+    margin: 0;
+    width: 40%;
+    padding: 0;
+  
+  
+  }
+  #checkbox1 {
+    margin-right: 3px;
+    /* width: 20rem; */
+    /* border: 1px solid; */
+  }
+  
+    /* .reservation {
+      font-size: 18px;
+    } */
   }

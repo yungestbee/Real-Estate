@@ -6,6 +6,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./viewProperties.css";
 import axios from "axios"
 import { Link, useNavigate } from "react-router-dom";
+import Cookies from 'js-cookie';
+import { jwtDecode } from "jwt-decode"; // Corrected import statement
+import Head from "../signup/head";
 
        
 const Properties = () => {
@@ -26,6 +29,12 @@ const Properties = () => {
   const [otherInfo, setOtherInfo] = useState("");
   const [selectedImages, setSelectedImages] = useState([])
   const navigate = useNavigate();
+
+  const token = Cookies.get('jwt');
+  if (token) {
+    var decoded = jwtDecode(token)
+    console.log(decoded)
+  }
 
   const handleImageUpload = (e) => {
     setSelectedImages(e.target.files[0]);
@@ -93,11 +102,12 @@ const Properties = () => {
     
       }
     } catch (error) {
-      if (error.response && error.response.status === 400) {
+      if (error.response && error.response.status === 40) {
         console.log(error.response.data)
         alert(error.response.data.message)
         setReply(error.response.data.message); 
       } else {
+        alert("An error occurred. Please try again later.");
         setReply("An error occurred. Please try again later."); // Generic error message for other errors
       }
     }
@@ -108,7 +118,7 @@ const Properties = () => {
         const handleDelete = async () => {
           try {
 
-              const response = await fetch(`${process.env.REACT_APP_DOMAIN} /api/property/${itemId}`, {
+              const response = await fetch(`${process.env.REACT_APP_DOMAIN}/api/property/${itemId}`, {
                 method: 'DELETE',
               });
       
@@ -116,9 +126,10 @@ const Properties = () => {
                 setBooking(prevData => prevData.filter(item => item._id !== itemId));
                 setShow1(false)
               } else {
-                setReply('Error deleting property');
+                alert('Error deleting property');
               }
           } catch (error) {
+            alert(error)
             console.error('Error deleting item:', error);
           }
         };
@@ -126,7 +137,8 @@ const Properties = () => {
 
   return (
        <>
-         <div className="container1">
+      <div className="fcontainer1">
+        <Head />
     
             <table className="fftabularForm">
 

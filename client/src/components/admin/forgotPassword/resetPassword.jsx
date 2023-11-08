@@ -67,7 +67,7 @@ function ResetPassword(){
                         <form onSubmit={handleSubmit}>
                            
                         <div className="inputContainer">
-                                <label for="pass">Password</label>
+                                <label for="pass">New Password</label>
                                 <div className="passInp">
                                 <input id="pass" className="inputBox" type={type} onChange={getPassword} />
                                 <FontAwesomeIcon icon={icon} className="eye" onClick={handleToggle}/>
@@ -75,7 +75,7 @@ function ResetPassword(){
                             </div>
 
                             <div className="inputContainer">
-                                <label for="pass">Password</label>
+                                <label for="pass">Re-Enter Password</label>
                                 <div className="passInp">
                                 <input id="pass" className="inputBox" type={type} onChange={getNewPassword} />
                                 <FontAwesomeIcon icon={icon} className="eye" onClick={handleToggle}/>

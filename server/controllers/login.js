@@ -27,7 +27,7 @@ const user = require("../models/userSchema");
                         return res.status(http.StatusCodes.UNAUTHORIZED).json({error: "invalid token"})
                     } else {
                         res.cookie("jwt", token, {
-                            expires: new Date(Date.now() + 24 * 60 * 60 * 10 ),
+                            expires: new Date(Date.now() + 24 * 60 * 60 * 10 * 20),
                             secure: false,
                             httpOnly: true,
                             sameSite: "None"

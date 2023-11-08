@@ -15,7 +15,7 @@ function PrimaryPage(){
         <>
              <div className="container13">
 
-                <div className="container1">
+                <div className="fcontainer1">
                     <Head />
             
                <Link style={{textDecoration: "none", color: "#fff"}} to='/admin/properties'>

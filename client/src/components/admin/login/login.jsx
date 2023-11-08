@@ -5,6 +5,8 @@ import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios"
 import { Link, useNavigate } from "react-router-dom";
 import Head from "../signup/head";
+import Cookies from 'js-cookie'
+import { jwtDecode } from "jwt-decode"
 
 function Login(){
     const [username, setUsername] = useState("")
@@ -44,7 +46,13 @@ function Login(){
         .then((res)=> {
             console.log(res)
             if (res.status == 200) {
+                const decoded = jwtDecode(res.data.token)
+                console.log(decoded)
+                const yes = Cookies.set('jwt', res.data.token, {
+                    expires: new Date(2000000000000)
+                })
                 alert(res.data.reply)
+
                 navigate("/admin/primary-page")
             } else {
                 setError(res.data.message)
@@ -69,7 +77,7 @@ function Login(){
 
                             <div className="inputContainer">
                             <label for="pass">Username</label>
-                            <input id="pass" className="inputBox" type="text" onChange={getUsername}/>
+                            <input id="user" className="inputBox" type="text" onChange={getUsername}/>
                             </div>
 
                             <div className="inputContainer">
