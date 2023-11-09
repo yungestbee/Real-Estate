@@ -38,11 +38,11 @@ a {
   font-size: 55.5%;
   position: relative;
   z-index: 2;
+  background-color: #002244;
 }
 
 .header-top {
   /* background-color: #efebeb; */
-  background-color: #002244;
   /* background-color: #434647; */
   padding-block: 5px;
 }

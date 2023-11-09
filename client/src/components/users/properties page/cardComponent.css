@@ -63,6 +63,22 @@
     margin-bottom: 5px;
   }
 
+  .cardBtn:hover{
+    background-color: #333;
+    background-color: #434647
+  }
+
+  .additionalDetails{
+    font-size: 0.8rem;
+    text-align: left;
+    color: #333;
+    margin:  0 0.3rem;
+  }
+
+  .additionalDetails p{
+    margin-bottom:  0.3rem;
+  }
+
   
   
   /* Responsive styles for screens smaller than 768px */
