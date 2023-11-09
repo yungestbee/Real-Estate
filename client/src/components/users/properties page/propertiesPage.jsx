@@ -2,6 +2,8 @@ import './cardComponent.css'; // Import the CSS file
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import image from "../../admin/images/firstBg.jpg"
+import Nav from '../home page/Navbar';
+import Footer from '../home page/Footer';
 
 function PropertiesPage() {
     const [data, setData] = useState(null);
@@ -18,7 +20,9 @@ function PropertiesPage() {
     }, []);
 
     return (
-        <div className="Container-fluid">
+        <>
+        <div className="Contain">
+            <Nav />
             {data ? (
                 <div className="cards">
                     {data.map((item) => 
@@ -49,6 +53,8 @@ function PropertiesPage() {
                 <p>Loading...</p>
             )}
         </div>
+            <Footer />
+        </>
     );
 }
 

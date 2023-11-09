@@ -1,16 +1,13 @@
 // import 'font-awesome/css/font-awesome.min.css';
 import {Link} from "react-router-dom"
 import "./primaryPage.css"
-import { useState, useEffect } from "react";
 import Head from "../signup/head";
 
 
 
 
 function PrimaryPage(){
-    // const token = Cookies.get('jwt');
-    // console.log(token)
-    // const [isLoggedIn, setIsLoggedIn]= useState(token !== undefined)
+    
     return(
         <>
              <div className="container13">
