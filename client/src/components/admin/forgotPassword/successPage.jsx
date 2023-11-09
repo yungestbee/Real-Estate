@@ -6,7 +6,7 @@ import image from "../images/success.png"
 function SuccessPage() {
 
     return (
-        <div className="container1">
+        <div className="fcontainer1">
             <Head />
                 <div className="successDiv">
                         <img className="successImage" src={image} />
