@@ -59,31 +59,37 @@ function Signup(){
 
    
     const handleSubmit =(e)=>{
+
         e.preventDefault()
+        var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+        if (password.match(decimal)) {
+            let userData = {
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                username: username,
+                password: password
+            }
 
-        let userData = {
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            username: username,
-            password: password
+            axios.post(`${process.env.REACT_APP_DOMAIN}/api/register`, userData)
+                .then((res) => {
+                    console.log(res)
+                    if (res.status == 200) {
+                        alert(res.data.message)
+                        navigate("/verification")
+
+                    } else {
+                        setError(res.data.message)
+                    }            // navigate('/employees')
+                })
+                .catch((err) => {
+                    setError(err.response.data.message)
+                    console.log(err.response.data.message)
+                })
+        } else {
+            alert('Password must contain uppercase, lowercase, number and symbol') 
+            return
         }
-
-        axios.post(`${process.env.REACT_APP_DOMAIN}/api/register`, userData)
-        .then((res)=> {
-            console.log(res)
-            if(res.status == 200){
-                alert(res.data.message)
-                navigate("/verification")
-
-            } else {
-                setError(res.data.message)
-            }            // navigate('/employees')
-         })
-            .catch((err) => {
-                setError(err.response.data.message.message)
-                console.log(err.response.data.message.message)
-            })
 
     }
     

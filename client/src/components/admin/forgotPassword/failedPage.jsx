@@ -4,7 +4,7 @@ import image from "../images/fail.png"
 function FailedPage() {
 
     return (
-        <div className="container1">
+        <div className="fcontainer1">
             <Head />
                 <div className="successDiv">
                         <img className="successImage" src={image} />

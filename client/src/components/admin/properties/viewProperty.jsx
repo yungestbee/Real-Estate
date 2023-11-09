@@ -26,6 +26,7 @@ const Properties = () => {
   const [reply, setReply] = useState("");
   const [DFTR, setDFTR] = useState("");
   const [promo, setPromo] = useState("");
+  const [status, setStatus] = useState("");
   const [otherInfo, setOtherInfo] = useState("");
   const [selectedImages, setSelectedImages] = useState([])
   const navigate = useNavigate();
@@ -84,6 +85,7 @@ const Properties = () => {
         formData.append("file", selectedImages)
         formData.append("promo", promo)
         formData.append("otherInfo", otherInfo)
+        formData.append("status", status)
         // formData.append("distanceFromTarredRoad", DFTR)
 
 
@@ -278,6 +280,16 @@ const Properties = () => {
               value={price}
               onChange={(e) => setPrice(e.target.value)}
             />
+              </div>
+              
+              <div className="form-group1">
+                <label>Status:</label>
+                <input
+                  type="text"
+                  value={status}
+                  onChange={(e) => setStatus(e.target.value)}
+                />
+            
           </div>
 
           <div className="form-group1">

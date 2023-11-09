@@ -10,6 +10,7 @@ import Properties from "./components/admin/properties/viewProperty";
 import EmailSent from "./components/admin/forgotPassword/emailSent";
 import AddProperty from "./components/admin/properties/addProperty";
 import PropertiesPage from "./components/users/properties page/propertiesPage";
+import Homepage from "./components/users/home page/Homepage";
 
 function App() {
   return (
@@ -27,8 +28,9 @@ function App() {
           <Route path="/admin/add-property" element={<AddProperty />}> </Route>
           <Route path="/verification" element={<EmailSent />}> </Route>
           <Route path="/properties" element={<PropertiesPage />}> </Route>
+          <Route path="/" element={<Homepage />}> </Route>
+          
         </Routes>
-        {/* <PropertiesPage /> */}
       </Router>
     </>
   );
